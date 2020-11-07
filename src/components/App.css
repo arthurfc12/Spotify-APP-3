@@ -1,0 +1,101 @@
+.App {
+  margin-top: 2.5rem;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.titulos {
+  color: #FFFFFF
+}
+
+.slidersDiv{
+  flex-direction: column;
+  display: flex;
+}
+
+.margemLateral {
+  margin-right: 0.5rem;
+}
+.sliderContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.slider{
+  width: 30%;
+  margin-top: 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.screen {
+  height: 100%;
+}
+
+.dropdown {
+  width: 30%;
+  background-color: #EEEEEE;
+}
+
+.selectable{
+  margin: 10px;
+}
+
+.dropdownLinha {
+  width: 20%;
+  background-color: #EEEEEE;
+  display: flex;
+  flex-direction: row;
+}
+
+.button {
+  margin-top: 15px;
+}
+
+.fontes{
+  font-size: large;
+}
+
+.barra1 {
+  min-width: 300px;
+  width: 30vw;
+  grid-area: esquerda;
+  background-color: #777777;
+}
+
+.barra2 {
+  min-width: 400px;
+  width: 40vw;
+  grid-area: meio;
+  background-color: #222222;
+}
+
+.barra3 {
+  min-width: 300px;
+  width: 30vw;
+  grid-area: direita;
+  background-color: #777777;
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-areas: "esquerda meio direita";
+  height: 100vh;
+}
+
+.gridContainer > div {
+  height: 100%;
+}
+
+.bGroup {
+  margin: 10% 5%;
+}
+
+.lista {
+  margin-bottom: 5px;
+}

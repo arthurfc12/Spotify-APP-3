@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import './components/App.css';
+import Routes from "./routes";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+// const cors = require("cors");
+// const express = require("express");
+// const app = express();
+// app.use(cors());
+
+class App extends React.Component {
+
+  // getRecommendation() {
+  //   const requestOptions = {
+  //     method: "GET",
+  //     headers: {
+  //       "Authorization": "Bearer " + this.state.token
+  //     }
+  //   }
+
+  //   fetch('https://api.spotify.com/v1/browse/categories', requestOptions)
+  //   .then((response) => {
+  //     console.log(response.json().then(
+  //       (data) => {console.log(data)}
+  //     ))
+  //   })
+  // }
+
+
+  render(){
+    return (
+      <div>
+        <Routes/>
+      </div>
+    );
+  }
 }
 
 export default App;
