@@ -9,6 +9,7 @@ https://spotifyapifrontend.herokuapp.com/
 ### APIs
 
 Esta aplicação utiliza duas APIs:
+
     -Spotify-API:         https://github.com/lucaskf1996/Spotify-API
     -Spotify-APP-backend: https://github.com/lucaskf1996/Spotify-APP-backend
 
