@@ -61,9 +61,25 @@ class MusicCard extends React.Component {
         console.log(r1)
         
         this.state.submission=true;
-        this.state.a1=(c1.substring(0,4) === r1.substring(0,4));
-        this.state.a2=(c1.substring(5,7) === r1.substring(5,7));
-        this.state.a3=(c1.substring(8) === r1.substring(8));
+
+        if(c1.substring(0,4) === r1.substring(0,4)){
+            this.state.a1 = "Acertou!"
+        } else {
+            this.state.a1 = "Errou!"
+        }
+
+        if(c1.substring(5,7) === r1.substring(5,7)){
+            this.state.a2 = "Acertou!"
+        } else {
+            this.state.a2 = "Errou!"
+        }
+
+        if(c1.substring(8) === r1.substring(8)){
+            this.state.a3 = "Acertou!"
+        } else {
+            this.state.a3 = "Errou!"
+        }
+
         // console.log(this.state);
         this.forceUpdate()
       }
@@ -118,9 +134,9 @@ class MusicCard extends React.Component {
             return(
                 <div className="titulos">
                     <h3>Pontuação</h3>
-                    <p className="fontes">Acertou o ano: {String(this.state.a1)}</p>
-                    <p className="fontes">Acertou o mes: {String(this.state.a2)}</p>
-                    <p className="fontes">Acertou o dia: {String(this.state.a3)}</p>
+                    <p className="fontes">Acertou o ano: {this.state.a1}</p>
+                    <p className="fontes">Acertou o mes: {this.state.a2}</p>
+                    <p className="fontes">Acertou o dia: {this.state.a3}</p>
                 </div>
             );
         }

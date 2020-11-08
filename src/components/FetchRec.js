@@ -18,12 +18,45 @@ class FetchRec extends React.Component {
                 "Authorization": "Bearer " + this.props.token
             }
         }
-        console.log(this.props)
-        fetch('https://api.spotify.com/v1/recommendations?seed_genres='+this.props.seedGenres
-                +"&min_acousticness"+String(this.props.valueMean.acousticness-0.1)+"&max_acousticness"+String(this.props.valueMean.acousticness+0.1)+
-                "&min_danceability"+String(this.props.valueMean.danceability-0.1)+"&max_danceability"+String(this.props.valueMean.danceability+0.1)+
-                "&min_energy"+String(this.props.valueMean.energy-0.1)+"&max_energy"+String(this.props.valueMean.energy+0.1)+
-                "&min_liveness"+String(this.props.valueMean.liveness-0.1)+"&max_liveness"+String(this.props.valueMean.liveness+0.1), requestOptions)
+
+        var acoustic = ""
+        var dance = ""
+        var energy = ""
+        var liveness = ""
+        
+        if(this.props.acousticness<0.15) {
+            acoustic = "&max_acousticness="+String(this.props.acousticness+0.15)+"&min_acousticness=0"
+        } else if(this.props.acousticness>0.85) {
+            acoustic = "&min_acousticness=0"+String(this.props.acousticness-0.15)+"&max_acousticness=0"
+        } else {
+            acoustic = "&min_acousticness=0"+String(this.props.acousticness-0.15)+"&max_acousticness="+String(this.props.acousticness+0.15)
+        }
+
+        if(this.props.energy<0.15) {
+            energy = "&max_energy="+String(this.props.energy+0.15)+"&min_energy=0"
+        } else if(this.props.energy>0.85) {
+            energy = "&min_energy=0"+String(this.props.energy-0.15)+"&max_energy=0"
+        } else {
+            energy = "&min_energy=0"+String(this.props.energy-0.15)+"&max_energy="+String(this.props.energy+0.15)
+        }
+
+        if(this.props.liveness<0.15) {
+            liveness = "&max_liveness="+String(this.props.liveness+0.15)+"&min_liveness=0"
+        } else if(this.props.liveness>0.85) {
+            liveness = "&min_liveness=0"+String(this.props.liveness-0.15)+"&max_liveness=0"
+        } else {
+            liveness = "&min_liveness=0"+String(this.props.liveness-0.15)+"&max_liveness="+String(this.props.liveness+0.15)
+        }
+
+        if(this.props.danceability<0.15) {
+            dance = "&max_danceability="+String(this.props.danceability+0.15)+"&min_danceability=0"
+        } else if(this.props.danceability>0.85) {
+            dance = "&min_danceability=0"+String(this.props.danceability-0.15)+"&max_danceability=0"
+        } else {
+            dance = "&min_danceability=0"+String(this.props.danceability-0.15)+"&max_danceability="+String(this.props.danceability+0.15)
+        }
+
+        fetch('https://api.spotify.com/v1/recommendations?seed_genres='+this.props.seedGenres+acoustic+energy+dance+liveness, requestOptions)
             .then(response => response.json())
             .then(data => this.setState({recommendations:data}))
     }
