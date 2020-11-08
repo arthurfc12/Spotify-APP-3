@@ -35,7 +35,7 @@ class Log extends React.Component {
                     <div className="titulos">
                         <h1>Histórico</h1>
                         {recArray.map(function(d, idx){
-                            return (<li className="lista">{d.musica}: Seu chute {d.guess} - Correto {d.correct}</li>)
+                            return (<li className="lista">{d.musica}: Seu chute {d.guess} >> Correto {d.correct}</li>)
                         })}
                     </div>
                 );
