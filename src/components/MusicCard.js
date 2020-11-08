@@ -1,5 +1,4 @@
-import { CompareSharp } from '@material-ui/icons';
-import React, { useState } from 'react';
+import React from 'react';
 import Button from '@material-ui/core/Button';
 
 class MusicCard extends React.Component {
@@ -111,7 +110,7 @@ class MusicCard extends React.Component {
                 <div className="titulos">
                     <h3>Música: {this.props.musica.name} por {this.props.musica.artists[0].name}</h3>
 
-                    <p className="fontes">Selecione a data de lançamento:</p>
+                    <p className="fontes">Adivinhe a data de lançamento:</p>
                     <div className="fontes">
                         <form id="contact-form" onSubmit={this.handleSubmit.bind(this)}>
                             <div>

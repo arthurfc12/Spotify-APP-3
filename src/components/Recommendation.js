@@ -23,12 +23,14 @@ class Recommendation extends React.Component {
           
           fetch('https://api.spotify.com/v1/me/playlists', requestOptions)
               .then(response => response.json())
-              .then(data => this.setState({playlists: data.items.map(item => { console.log(data.items)
-                    return {
-                      tracksLink:item
-                  }
-              })
+              .then(data => this.setState({playlists: data
           }))
+
+    //       .items.map(item => { console.log(data.items)
+    //         return {
+    //           tracksLink:item
+    //       }
+    //   })
     }
 
     refresh() {

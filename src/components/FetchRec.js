@@ -1,5 +1,4 @@
 import React from "react";
-import Slider from 'react-input-slider';
 import "./App.css"
 
 class FetchRec extends React.Component {

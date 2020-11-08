@@ -39,9 +39,9 @@ class PlaylistFeatures extends React.Component {
         var output2 = "";
         var contador = 0;
         for (var i=0; i < Object.keys(this.props.tracksList).length ; ++i){
-            output = output.concat(String(props.tracksList[i].tracksList.track.id));
+            output = output.concat(String(props.tracksList[i].track.id)); //.tracksList.
             if(contador<=4){
-                output2 = output2.concat(String(props.tracksList[i].tracksList.track.artists[0].id));
+                output2 = output2.concat(String(props.tracksList[i].track.artists[0].id)); //.tracksList
             }
             if(i!=(Object.keys(this.props.tracksList).length)-1){
                 output = output.concat(",")

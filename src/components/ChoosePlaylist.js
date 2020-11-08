@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import MusicCard from './MusicCard.js';
+import React from 'react';
 import PlaylistFeatures from './PlaylistFeatures.js';
 
 class ChoosePlaylist extends React.Component {
@@ -25,14 +24,15 @@ class ChoosePlaylist extends React.Component {
         // console.log(Object.keys(this.props.playlistList))
         var sorteio = Math.floor(Math.random() * Object.keys(this.props.playlistList).length);
         // console.log(sorteio)
-        fetch(String(this.props.playlistList[sorteio].tracksLink.tracks.href), requestOptions)
+        fetch(String(this.props.playlistList[sorteio].tracks.href), requestOptions) //.tracksLink
             .then(response => response.json())
-            .then(data => this.setState({tracks: data.items.map(item => { console.log(data.items)
-                return {
-                    tracksList:item
-                }
-            })
+            .then(data => this.setState({tracks: data
         }))
+        // .items.map(item => { console.log(data.items)
+        //     return {
+        //         tracksList:item
+        //     }
+        // })
     }
 
     render(){

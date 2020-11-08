@@ -22,12 +22,13 @@ class SelectPlaylist extends React.Component {
         var sorteio = Math.floor(Math.random() * Object.keys(this.props.playlistList).length);
         fetch(String(this.props.playlistList[sorteio].tracksLink.tracks.href), requestOptions)
             .then(response => response.json())
-            .then(data => this.setState({tracks: data.items.map(item => { console.log(data.items)
-                return {
-                    tracksLink:item
-                }
-            })
+            .then(data => this.setState({tracks: data
         }))
+        // .items.map(item => { console.log(data.items)
+        //     return {
+        //         tracksLink:item
+        //     }
+        // })
     }
 
     render(){
@@ -35,7 +36,7 @@ class SelectPlaylist extends React.Component {
             // console.log(this.state.tracks[0].tracksLink.track.album);
             return(
                 <div>
-                    <MusicCard token={this.props.token} musica={this.state.tracks[Math.floor(Math.random() * Object.keys(this.state.tracks).length)].tracksLink.track} />
+                    <MusicCard token={this.props.token} musica={this.state.tracks[Math.floor(Math.random() * Object.keys(this.state.tracks).length)].track} /> {/*.tracksLink*/}
                 </div>
             );
         } else {
