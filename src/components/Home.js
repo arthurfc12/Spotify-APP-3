@@ -57,10 +57,6 @@ class Home extends React.Component {
         }
         return hashParams;
     }
-    
-    refresh(){
-        this.forceUpdate()
-    }
 
     handleChange1(){
         if(this.state.page === "game"){

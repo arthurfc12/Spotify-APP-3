@@ -27,9 +27,9 @@ class Log extends React.Component {
     render() {
         if(this.state.hist!==undefined){
             const recArray = this.state.hist
-            console.log(this.props.id)
-            console.log(recArray)
-            console.log(recArray.length)
+            // console.log(this.props.id)
+            // console.log(recArray)
+            // console.log(recArray.length)
             if(recArray.length!==0){
                 return(
                     <div className="titulos">

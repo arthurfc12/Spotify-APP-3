@@ -28,7 +28,7 @@ class PlaylistFeatures extends React.Component {
             drop4:false,
             drop5:false,
         }
-        console.log(props)
+        // console.log(props)
         var output = "";
         var output2 = "";
         var contador = 0;
@@ -87,7 +87,7 @@ class PlaylistFeatures extends React.Component {
     }
 
     valueMean(){
-        console.log(this.state.tracksValues)
+        // console.log(this.state.tracksValues)
         var output = {
             acousticness:0,
             danceability:0,

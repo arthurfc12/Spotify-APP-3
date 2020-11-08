@@ -33,7 +33,7 @@ class SelectPlaylist extends React.Component {
 
     render(){
         if(this.state.tracks!==""){
-            console.log(this.state.tracks[0].tracksLink.track.album);
+            console.log(this.state.tracks[0]); //.tracksLink .track.album
             return(
                 <div>
                     <MusicCard token={this.props.token} musica={this.state.tracks.items[Math.floor(Math.random() * Object.keys(this.state.tracks.items).length)].track} /> {/*.tracksLink*/}
