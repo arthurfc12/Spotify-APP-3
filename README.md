@@ -17,6 +17,7 @@ A primeira é a API própria do Spotify, enquanto a segunda é uma API produzida
 ### Conteúdo
 
 A aplicação contém:
+
     -Login feito com sua conta Spotify
     -Jogo da data de lançamento
     -Recomendações de música
