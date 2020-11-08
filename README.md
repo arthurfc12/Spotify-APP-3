@@ -10,8 +10,8 @@ https://spotifyapifrontend.herokuapp.com/
 
 Esta aplicação utiliza duas APIs:
 
-    -Spotify-API:         [https://github.com/lucaskf1996/Spotify-API](https://github.com/lucaskf1996/Spotify-API)
-    -Spotify-APP-backend: [https://github.com/lucaskf1996/Spotify-APP-backend](https://github.com/lucaskf1996/Spotify-APP-backend)
+    -Spotify-API:         https://github.com/lucaskf1996/Spotify-API
+    -Spotify-APP-backend: https://github.com/lucaskf1996/Spotify-APP-backend
 
 A primeira é a API própria do Spotify, enquanto a segunda é uma API produzida para guardar informações relacionadas ao jogo contido nesta aplicação.
 
