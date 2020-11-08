@@ -238,6 +238,7 @@ class PlaylistFeatures extends React.Component {
                                     className="slider"
                                 />   
                             </div>
+                            <p>1.0 represents high confidence the track is acoustic.</p>
                         </div>
                         <div className="sliderContainer">
                             <h3>Dançabilidade</h3>
@@ -253,6 +254,7 @@ class PlaylistFeatures extends React.Component {
                                     className="slider"
                                 />   
                             </div>
+                            <p>Describes how suitable a track is for dancing based on a combination of musical elements.</p>
                         </div>
                         <div className="sliderContainer">
                             <h3>Energia</h3>
@@ -268,6 +270,7 @@ class PlaylistFeatures extends React.Component {
                                     className="slider"
                                 />   
                             </div>
+                            <p>Typically, energetic tracks feel fast, loud, and noisy.</p>
                         </div>
                         <div className="sliderContainer">
                             <h3>Vivacidade</h3>
@@ -283,9 +286,11 @@ class PlaylistFeatures extends React.Component {
                                     className="slider"
                                 />   
                             </div>
+                            <p>Higher liveness values represent an increased probability that the track was performed live.</p>
                         </div>
                         <div className="App">
                             <h3>Escolha pelo menos um gênero:</h3>
+                            <p>Menos gêneros = Maiores as chances de encontrar uma recomendação</p>
                             <FormControl className="dropdownLinha">
                                 <Select
                                     className="selectable"
