@@ -24,7 +24,7 @@ class Game extends React.Component {
           
           fetch('https://api.spotify.com/v1/me/playlists', requestOptions)
               .then(response => response.json())
-              .then(data => this.setState({playlists: data 
+              .then(data => this.setState({playlists: data.items 
           }))
 
     //       .items.map(item => { console.log(data.items)
@@ -66,7 +66,7 @@ class Game extends React.Component {
 
 
         if(this.state.playlists !== ""){
-            console.log(this.state.playlists)
+            // console.log(this.state.playlists)
             return(
                 <div>
                     <h1 className="titulos">Game</h1>
