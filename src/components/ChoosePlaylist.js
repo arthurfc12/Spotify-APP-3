@@ -36,7 +36,7 @@ class ChoosePlaylist extends React.Component {
     }
 
     render(){
-        if(this.state.tracks!=""){
+        if(this.state.tracks!==""){
             // console.log(this.state.tracks)
             return(
                 <div className="titulos">

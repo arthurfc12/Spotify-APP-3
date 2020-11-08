@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import ChoosePlaylist from "./ChoosePlaylist";
 
 class Recommendation extends React.Component {
@@ -38,7 +38,7 @@ class Recommendation extends React.Component {
     }
 
     render(){
-        if(this.state.playlists != ""){
+        if(this.state.playlists !== ""){
             return(
                 <div>
                     <h1 className="titulos">Recomendação</h1>

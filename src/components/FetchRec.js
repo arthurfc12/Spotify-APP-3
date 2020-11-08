@@ -61,7 +61,7 @@ class FetchRec extends React.Component {
     }
 
     render(){
-        if(this.state.recommendations!=""){
+        if(this.state.recommendations!==""){
             const recArray = this.state.recommendations.tracks
             console.log(recArray)
             if(recArray.length!==0){
