@@ -33,7 +33,7 @@ class FetchRec extends React.Component {
         }
 
         if(this.props.energy<0.15) {
-            energy = "&min_energy=0&max_energy="String(this.props.energy+0.15)
+            energy = "&min_energy=0&max_energy="+String(this.props.energy+0.15)
         } else if(this.props.energy>0.85) {
             energy = "&min_energy=0"+String(this.props.energy-0.15)+"&max_energy=0"
         } else {
