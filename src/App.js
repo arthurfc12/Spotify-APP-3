@@ -29,6 +29,9 @@ class App extends React.Component {
   render(){
     return (
       <div>
+        <Helmet>
+          <title>Spotify App</title>
+        </Helmet>
         <Routes/>
       </div>
     );

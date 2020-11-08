@@ -2,13 +2,10 @@ import React from 'react';
 import Game from "./Game";
 import Recommendation from "./Recommendation";
 import "./App.css";
-import InputLabel from '@material-ui/core/InputLabel';
-import MenuItem from '@material-ui/core/MenuItem';
-import FormControl from '@material-ui/core/FormControl';
-import Select from '@material-ui/core/Select';
 import Log from "./Log.js"
 import Button from '@material-ui/core/Button';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
+import Helmet from "react-helmet";
 
 class Home extends React.Component {
 
@@ -114,6 +111,9 @@ class Home extends React.Component {
         if(this.state.page=="game") {
             return (
                 <div className="gridContainer">  
+                <Helmet>
+                    <title>Spotify App</title>
+                </Helmet>
                     <div className="barra1"></div>
                     <div className="barra2">
                         <div className='bGroup'>    
@@ -132,6 +132,9 @@ class Home extends React.Component {
         else if(this.state.page=="recommendation") {
             return(
                 <div className="gridContainer">
+                <Helmet>
+                    <title>Spotify App</title>
+                </Helmet>
                     <div className="barra1"></div>
                     <div className="barra2">
                         <div className='bGroup'>
@@ -151,6 +154,9 @@ class Home extends React.Component {
             console.log(this.state.userId.id)
             return(
                 <div className="gridContainer">
+                <Helmet>
+                    <title>Spotify App</title>
+                </Helmet>
                     <div className="barra1"></div>
                     <div className="barra2">
                         <div className='bGroup'> 
