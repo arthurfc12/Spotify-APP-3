@@ -1,6 +1,7 @@
 import React from 'react';
 import './components/App.css';
 import Routes from "./routes";
+import Helmet from "react-helmet";
 
 // const cors = require("cors");
 // const express = require("express");
