@@ -66,6 +66,7 @@ class Game extends React.Component {
 
 
         if(this.state.playlists !== ""){
+            console.log(this.state.playlists)
             return(
                 <div>
                     <h1 className="titulos">Game</h1>
