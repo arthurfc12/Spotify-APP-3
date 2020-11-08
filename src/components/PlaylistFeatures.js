@@ -3,13 +3,7 @@ import FetchRec from "./FetchRec.js"
 import "./App.css";
 import Slider from "@material-ui/core/Slider";
 import Button from '@material-ui/core/Button';
-import FormLabel from '@material-ui/core/FormLabel';
 import FormControl from '@material-ui/core/FormControl';
-import FormGroup from '@material-ui/core/FormGroup';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import FormHelperText from '@material-ui/core/FormHelperText';
-import Checkbox from '@material-ui/core/Checkbox';
-import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import Select from '@material-ui/core/Select';
 
@@ -43,7 +37,7 @@ class PlaylistFeatures extends React.Component {
             if(contador<=4){
                 output2 = output2.concat(String(props.tracksList[i].track.artists[0].id)); //.tracksList
             }
-            if(i!=(Object.keys(this.props.tracksList).length)-1){
+            if(i!==(Object.keys(this.props.tracksList).length)-1){
                 output = output.concat(",")
             }
             if(contador<=3){
@@ -219,7 +213,7 @@ class PlaylistFeatures extends React.Component {
 
     render(){
         
-        if(this.state.tracksValues!=""){
+        if(this.state.tracksValues!==""){
             this.valueMean()
             if(this.state.valueMean.acousticness!==undefined && this.state.enviar === false) {
                 return(

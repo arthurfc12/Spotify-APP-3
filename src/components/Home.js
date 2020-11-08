@@ -108,7 +108,7 @@ class Home extends React.Component {
     }
 
     render() {
-        if(this.state.page=="game") {
+        if(this.state.page==="game") {
             return (
                 <div className="gridContainer">  
                 <Helmet>
@@ -129,7 +129,7 @@ class Home extends React.Component {
                 </div>
             );
         }
-        else if(this.state.page=="recommendation") {
+        else if(this.state.page==="recommendation") {
             return(
                 <div className="gridContainer">
                 <Helmet>
@@ -150,7 +150,7 @@ class Home extends React.Component {
                 </div>
             );
         }
-        else if(this.state.page=="log") {
+        else if(this.state.page==="log") {
             console.log(this.state.userId.id)
             return(
                 <div className="gridContainer">

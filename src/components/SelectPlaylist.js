@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import MusicCard from './MusicCard.js';
 
 class SelectPlaylist extends React.Component {
@@ -20,7 +20,7 @@ class SelectPlaylist extends React.Component {
             }
           }
         var sorteio = Math.floor(Math.random() * Object.keys(this.props.playlistList).length);
-        fetch(String(this.props.playlistList[sorteio].tracksLink.tracks.href), requestOptions)
+        fetch(String(this.props.playlistList[sorteio].tracks.href), requestOptions) //.tracksLink
             .then(response => response.json())
             .then(data => this.setState({tracks: data
         }))
@@ -32,7 +32,7 @@ class SelectPlaylist extends React.Component {
     }
 
     render(){
-        if(this.state.tracks!=""){
+        if(this.state.tracks!==""){
             // console.log(this.state.tracks[0].tracksLink.track.album);
             return(
                 <div>

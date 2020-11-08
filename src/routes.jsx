@@ -2,12 +2,7 @@ import React from 'react';
 import Home from "./components/Home";
 import {
     BrowserRouter as Router,
-    Switch,
-    Route,
-    Link,
-    useRouteMatch,
-    useParams,
-    Redirect
+    Route
   } from "react-router-dom";
   
 
