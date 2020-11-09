@@ -6,6 +6,10 @@ https://spotifyapifrontend.herokuapp.com/
 
 ## Notas
 
+### Observação
+
+Ao entrar no site, ele pode demorar um pouco para carregar, pois o heroku, quando detecta atividade, deixa o site em modo idle.
+
 ### APIs
 
 Esta aplicação utiliza duas APIs:
