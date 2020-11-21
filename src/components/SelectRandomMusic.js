@@ -1,12 +1,10 @@
 import React from 'react';
-import MusicCard from './MusicCard.js';
+import ArtistCard from './ArtistCard.js';
 
-class SelectPlaylist extends React.Component {
+class SelectRandomMusic extends React.Component {
 
     constructor(props){
         super(props)
-        // console.log("SelectPlaylist")
-        // console.log(props)
         this.state = {
             tracks:""
         }
@@ -31,7 +29,7 @@ class SelectPlaylist extends React.Component {
             console.log(this.state.tracks.items); //.tracksLink .track.album
             return(
                 <div>
-                    <MusicCard token={this.props.token} musica={this.state.tracks.items[Math.floor(Math.random() * Object.keys(this.state.tracks.items).length)].track} /> {/*.tracksLink*/}
+                    <ArtistCard token={this.props.token} musica={this.state.tracks.items[Math.floor(Math.random() * Object.keys(this.state.tracks.items).length)].track} /> {/*.tracksLink*/}
                 </div>
             );
         } else {
@@ -42,4 +40,4 @@ class SelectPlaylist extends React.Component {
         
     }
 }
-export default SelectPlaylist;
+export default SelectRandomMusic;
