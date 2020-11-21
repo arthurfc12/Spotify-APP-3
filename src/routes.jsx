@@ -10,7 +10,7 @@ export default props => (
     <Router>
         {/* <Route exact path = "/" component={Login}/> */}
         <Route exact path='/' component={() => { 
-            window.location.href = 'https://spotifyapiback.herokuapp.com/'; // http://localhost:8888
+            window.location.href = 'http://localhost:8888'; // http://localhost:8888
             return null;
         }}/>
         <Route path = "/home" component={Home} />
