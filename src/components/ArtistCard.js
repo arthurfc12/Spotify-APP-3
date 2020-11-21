@@ -109,8 +109,9 @@ class ArtistCard extends React.Component {
             }
             return(
                 <div className="titulos">
-                    <h3>Pontuação</h3>
-                    <p className="fontes">Acertou o artista: {this.state.a1}</p>
+                    <h3>Resultado:</h3>
+                    <p className="fontes">{this.state.a1}</p>
+                    <p className="fontes">Artista Correto: {this.props.musica.artists[0].name}</p>
 
                     <button className="playAgain" onClick={this.handleRefresh}>
 						{' '}
