@@ -6,7 +6,8 @@ class Log extends React.Component {
     constructor(props){
         super(props)
         this.state={
-            hist:undefined
+            hist:undefined,
+            recents:"",
         }
     }
 
@@ -20,13 +21,17 @@ class Log extends React.Component {
             .then(response => response.json()) 
             .then(result => this.setState({hist:result}))
             .catch(error => console.log('error', error));
+          fetch('https://api.spotify.com/v1/me/player/recently-played', requestOptions)
+            .then(response => response.json())
+            .then(data => this.setState({recents: data.items}))
     }
     
 
 
     render() {
-        if(this.state.hist!==undefined){
+        if(this.state.hist!==undefined || this.state.recents!==""){
             const recArray = this.state.hist
+            const recArrayR = this.state.recents
             // console.log(this.props.id)
             // console.log(recArray)
             // console.log(recArray.length)
@@ -34,9 +39,16 @@ class Log extends React.Component {
                 return(
                     <div className="titulos">
                         <h1>Histórico</h1>
+                        <h2>Jogo: </h2>
                         {recArray.map(function(d, idx){
                             return (<li className="lista">{d.musica}: Seu chute {d.guess} >> Correto {d.correct}</li>)
                         })}
+
+                        <h2>Músicas ouvidas recentememte: </h2>
+                        {recArrayR.map(function(d, idx){
+                            return (<li className="lista">{d.musica}</li>)
+                        })}
+
                     </div>
                 );
             } else {
