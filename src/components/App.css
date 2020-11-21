@@ -55,6 +55,7 @@
 
 .button {
   margin-top: 15px;
+ 
 }
 
 .fontes{
@@ -98,4 +99,110 @@
 
 .lista {
   margin-bottom: 5px;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.inRow{
+  display: flex;
+  flex-direction: row;
+  margin-top: 30px;
+ 
+}
+
+.Results{
+  margin-top: 20px;
+  color: #FFFFFF;
+  font-size: 20px;
+
+}
+
+.title{
+
+  color: #FFFFFF;
+  font-size: 30px;
+  
+}
+
+.column{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.columnHome{
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 30px;
+  
+
+}
+.txt{
+  margin-top: 30px;
+  color: #FFFFFF;
+  font-size: 30px;
+}
+
+.btn{
+
+  background-color: #FFFFFF;
+  color: #222222;
+  border-color: transparent;
+  height: 70px;
+  width: 200px;
+  border-radius: 10%;
+  font-size: 15px;
+  text-transform: uppercase;
+  margin-top: 20px;
+ }
+
+.btn:disabled{ 
+
+  background-color: #fffdfdc9;
+  color: #222222;
+}
+
+
+.playAgain{
+
+  background-color: #ffffff;
+  color: #222222;
+  border-color: transparent;
+  height: 50px;
+  font-size: 15px;
+  display:flex;
+  margin-top: 50px;
+  border-radius: 10%;
+  text-align: center;
+  align-items: center;
+
+}
+
+.desc{
+  text-align: center;
+}
+
+.gameOpt{
+  width: 100%;
+  height:70px;
+  margin-top: 30px;
+  font-size: 15px;
+  
+}
+
+.gameOpt:hover{
+  width: 100%;
+  height:70px;
+  margin-top: 30px;
+  font-size: 15px;
+  border-color: rgb(72, 128, 231);
+  border-width: 5px;
+  
 }
