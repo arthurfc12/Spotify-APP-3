@@ -9,7 +9,7 @@ class Songs extends React.Component {
         this.state={
             loading: false,
             recents: "",
-            // tracks: "",
+            track: "",
         }
     }
 
@@ -42,7 +42,7 @@ class Songs extends React.Component {
                     {
                         this.state.loading ? <h1>Carregando</h1> :
                         <div>
-                            <SelectSongs playlistList = {this.state.recents} token = {this.props.token}/>
+                            <SelectSongs SongsList = {this.state.recents} token = {this.props.token}/>
                         </div>
                     }
                 </div>

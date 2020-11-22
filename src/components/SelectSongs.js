@@ -8,7 +8,7 @@ class SelectSongs extends React.Component {
         // console.log("SelectPlaylist")
         // console.log(props)
         this.state = {
-            tracks:""
+            track:""
         }
     }
 
@@ -27,20 +27,20 @@ class SelectSongs extends React.Component {
     }
 
     render(){
-        if(this.state.tracks!==""){
+        if(this.state.track!==""){
             console.log(this.state.tracks.items); 
             return(
                 <div>
-                    <p>Música: {this.props.musica[0].name} por {this.props.musica.artists[0].name}</p>
-                    <p>Música: {this.props.musica[1].name} por {this.props.musica.artists[1].name}</p>
+                    <p>Música: {this.props.track.name} por {this.props.track.artists}</p>
+                    {/* <p>Música: {this.props.musica[1].name} por {this.props.musica.artists[1].name}</p>
                     <p>Música: {this.props.musica[2].name} por {this.props.musica.artists[2].name}</p>
                     <p>Música: {this.props.musica[3].name} por {this.props.musica.artists[3].name}</p>
-                    <p>Música: {this.props.musica[4].name} por {this.props.musica.artists[4].name}</p>
+                    <p>Música: {this.props.musica[4].name} por {this.props.musica.artists[4].name}</p> */}
                 </div>
             );
         } else {
             return(
-                <div></div>
+                <div>Não foi</div>
             );
         }
         
