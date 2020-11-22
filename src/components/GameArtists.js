@@ -85,7 +85,9 @@ class GameArtists extends Component {
 		}
 	}
 	handleRefresh() {
-		window.location.reload();
+		window.location.reload(false);
+		// this.forceUpdate();
+		// console.log('entrou');
 	}
 
 	render() {
@@ -123,7 +125,7 @@ class GameArtists extends Component {
 							</div>
 							<button className="playAgain" onClick={this.handleRefresh}>
 								{' '}
-								<div> Jogar Novamente</div>
+								<div> Ver outros Jogos</div>
 							</button>
 						</div>
 					)}
