@@ -142,7 +142,7 @@ class MusicCard extends React.Component {
 				<div className="titulos">
 					<h3>Pontuação</h3>
 					<p className="fontes">Acertou o ano: {this.state.a1}</p>
-					<p className="fontes">Acertou o mes: {this.state.a2}</p>
+					<p className="fontes">Acertou o mês: {this.state.a2}</p>
 					<p className="fontes">Acertou o dia: {this.state.a3}</p>
 				</div>
 			);
