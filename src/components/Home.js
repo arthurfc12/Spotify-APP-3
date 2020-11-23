@@ -184,6 +184,20 @@ class Home extends React.Component {
                         {' '}
                         Acerte o Artista da música!{' '}
                       </button>
+
+                      <button
+                        className='gameOpt'
+                        onClick={() => {
+                          this.setState({
+                            artistRelated: true,
+                            buttons: false,
+                          });
+                        }}
+                      >
+                        {' '}
+                        Busque artistas relacionados{' '}
+                      </button>
+
                     </div>
                   </div>
                 )}
@@ -199,6 +213,13 @@ class Home extends React.Component {
                     id={this.state.userId}
                     token={this.state.token}
                   />
+                )}
+
+                {this.state.artistRelated && (
+                  <ArtistRelated
+                    id={this.state.userId}
+                    token={this.state.token}
+                    />
                 )}
               </div>
             </div>
