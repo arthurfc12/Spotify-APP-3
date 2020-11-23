@@ -206,3 +206,14 @@
   border-width: 5px;
   
 }
+
+.songs {
+  color: #FFFFFF;
+  font-size: large;
+}
+
+hr.solid {
+  border-top: 3px solid #bbb;
+  background-color: #FFFFFF;
+  color: #FFFFFF;
+}

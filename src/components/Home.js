@@ -9,6 +9,7 @@ import Helmet from 'react-helmet';
 import GameArtists from './GameArtists';
 import ArtistRelated from './ArtistRelated';
 import GameArtist from './GameArtist';
+import Songs from './Songs';
 
 class Home extends React.Component {
   constructor(props) {
@@ -31,6 +32,8 @@ class Home extends React.Component {
     this.handleChange1 = this.handleChange1.bind(this);
     this.handleChange2 = this.handleChange2.bind(this);
     this.handleChange3 = this.handleChange3.bind(this);
+    this.handleChange4 = this.handleChange4.bind(this);
+    
     this.refresh = this.refresh.bind(this);
     console.log(this.state);
     // const freshState = this.state;
@@ -99,6 +102,17 @@ class Home extends React.Component {
     }
   }
 
+  handleChange4() {
+    if (this.state.page === 'songs') {
+      this.setState({
+        page: 'refresh',
+        refresh: 'songs',
+      });
+    } else {
+      this.setState({ page: 'songs' });
+    }
+  }
+
   handleClose() {
     this.setState({ drop: false });
   }
@@ -129,6 +143,7 @@ class Home extends React.Component {
                 <Button onClick={this.handleChange1}>Game</Button>
                 <Button onClick={this.handleChange2}>Recomendação</Button>
                 <Button onClick={this.handleChange3}>Histórico</Button>
+                <Button onClick={this.handleChange4}>Músicas</Button>
               </ButtonGroup>
               <div>
                 {this.state.buttons && (
@@ -167,18 +182,6 @@ class Home extends React.Component {
                       >
                         {' '}
                         Acerte o Artista da música!{' '}
-                      </button>
-                      <button
-                        className='gameOpt'
-                        onClick={() => {
-                          this.setState({
-                            artistRelated: true,
-                            buttons: false,
-                          });
-                        }}
-                      >
-                        {' '}
-                        Busque artistas relacionados{' '}
                       </button>
                     </div>
                   </div>
@@ -220,6 +223,8 @@ class Home extends React.Component {
                 <Button onClick={this.handleChange1}>Game</Button>
                 <Button onClick={this.handleChange2}>Recomendação</Button>
                 <Button onClick={this.handleChange3}>Histórico</Button>
+                <Button onClick={this.handleChange4}>Músicas</Button>
+                
               </ButtonGroup>
               <Recommendation token={this.state.token} />
             </div>
@@ -245,8 +250,35 @@ class Home extends React.Component {
                 <Button onClick={this.handleChange1}>Game</Button>
                 <Button onClick={this.handleChange2}>Recomendação</Button>
                 <Button onClick={this.handleChange3}>Histórico</Button>
+                <Button onClick={this.handleChange4}>Músicas</Button>
+                
               </ButtonGroup>
               <Log id={this.state.userId.id} token={this.state.token} />
+            </div>
+          </div>
+          <div className='barra3' />
+        </div>
+      );
+    } else if (this.state.page === 'songs') {
+      return (
+        <div className='gridContainer'>
+          <Helmet>
+            <title>Spotify App</title>
+          </Helmet>
+          <div className='barra1' />
+          <div className='barra2'>
+            <div className='bGroup'>
+              <ButtonGroup
+                variant='contained'
+                color='primary'
+                aria-label='contained primary button group'
+              >
+                <Button onClick={this.handleChange1}>Game</Button>
+                <Button onClick={this.handleChange2}>Recomendação</Button>
+                <Button onClick={this.handleChange3}>Histórico</Button>
+                <Button onClick={this.handleChange4}>Músicas</Button>
+              </ButtonGroup>
+              <Songs token={this.state.token} />
             </div>
           </div>
           <div className='barra3' />
