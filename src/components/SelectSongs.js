@@ -11,6 +11,14 @@ class SelectSongs extends React.Component {
 		};
 	}
 
+	handleChange() {
+		alert("Artista definido como 'gostei'" )
+	}
+
+	handleChange2() {
+		alert("Artista definido como 'não gostei'")
+	}
+
 	componentDidMount() {
 		const requestOptions = {
 			method: 'GET',
@@ -28,10 +36,30 @@ class SelectSongs extends React.Component {
 	render() {
 		console.log('this.state.SongsList:', this.state.SongsList);
 		console.log('this.props.SongsList: ALOOOOOOOOO', this.props.SongsList[0].track.name);
+		this.state.variable = true
+		this.state.variable = false
+
 		if (this.props.SongsList !== '') {
 			console.log('this.state.SongsList.items: ENTROUUU', this.state.SongsList.items);
+
+
+
+			var receivesTrue = document.createElement('button');
+			receivesTrue.id = true;
+			receivesTrue.innerHTML = 'Click me';
+			receivesTrue.style.background = '#4FFF8F';
+			document.body.appendChild(receivesTrue);
+
+			var receivesFalse = document.createElement('button');
+			receivesFalse.id = false;
+			receivesFalse.innerHTML = 'Click me';
+			receivesFalse.style.background = '#4FFF8F';
+			document.body.appendChild(receivesFalse);
 			return (
 				<div>
+				<Button onClick={this.handleChange}>Sim</Button>
+				<Button onClick={this.handleChange2}>Não</Button>
+
 					<ul className = "songs">
 						<li>
 							{this.props.SongsList[0].track.name} por {this.props.SongsList[0].track.artists[0].name}
