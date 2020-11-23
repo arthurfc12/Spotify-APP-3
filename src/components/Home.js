@@ -8,6 +8,7 @@ import ButtonGroup from '@material-ui/core/ButtonGroup';
 import Helmet from 'react-helmet';
 import GameArtists from './GameArtists';
 import ArtistRelated from './ArtistRelated';
+import GameArtist from './GameArtist';
 
 class Home extends React.Component {
   constructor(props) {
@@ -69,6 +70,7 @@ class Home extends React.Component {
         buttons: true,
         guessTheDate: false,
         whichArtist: false,
+        guessTheArtist: false,
       });
     } else {
       this.setState({ page: 'game', buttons: true });
@@ -154,7 +156,18 @@ class Home extends React.Component {
                         {' '}
                         Acerte a data de lançamento da música!{' '}
                       </button>
-
+                      <button
+                        className='gameOpt'
+                        onClick={() => {
+                          this.setState({
+                            guessTheArtist: true,
+                            buttons: false,
+                          });
+                        }}
+                      >
+                        {' '}
+                        Acerte o Artista da música!{' '}
+                      </button>
                       <button
                         className='gameOpt'
                         onClick={() => {
@@ -175,6 +188,9 @@ class Home extends React.Component {
                   <GameArtists token={this.state.token} />
                 )}
                 {this.state.guessTheDate && <Game token={this.state.token} />}
+                {this.state.guessTheArtist && (
+                  <GameArtist token={this.state.token} />
+                )}
                 {this.state.artistRelated && (
                   <ArtistRelated
                     id={this.state.userId}

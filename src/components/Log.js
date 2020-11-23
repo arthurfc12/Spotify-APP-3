@@ -16,7 +16,7 @@ class Log extends React.Component {
             redirect: 'follow'
           };
           console.log(this.props.id)
-          fetch("https://peaceful-cliffs-57360.herokuapp.com/tentativas/"+String(this.props.id), requestOptions)  //http://localhost:5000/tentativas/ to run locally
+          fetch("http://localhost:5000/tentativas/"+String(this.props.id), requestOptions)  //http://localhost:5000/tentativas/ to run locally
             .then(response => response.json()) 
             .then(result => this.setState({hist:result}))
             .catch(error => console.log('error', error));

@@ -95,7 +95,7 @@ class MusicCard extends React.Component {
             body: raw
         };
         
-        fetch("https://peaceful-cliffs-57360.herokuapp.com/save", requestOptions) //http://localhost:5000/save to run locally
+        fetch("http://localhost:5000/save", requestOptions) //http://localhost:5000/save to run locally
             .then(response => response.text())
             .then(result => console.log(result))
             .catch(error => console.log('error', error));
