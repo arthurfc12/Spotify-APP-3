@@ -32,21 +32,27 @@ class SelectSongs extends React.Component {
 			console.log('this.state.SongsList.items: ENTROUUU', this.state.SongsList.items);
 			return (
 				<div>
-					<p>
-						{this.props.SongsList[0].track.name} por {this.props.SongsList[0].track.artists[0].name}
-					</p>
-					<p>
-						{this.props.SongsList[1].track.name} por {this.props.SongsList[1].track.artists[0].name}
-					</p>
-					<p>
-						{this.props.SongsList[2].track.name} por {this.props.SongsList[2].track.artists[0].name}
-					</p>
-					<p>
-						{this.props.SongsList[3].track.name} por {this.props.SongsList[3].track.artists[0].name}
-					</p>
-					<p>
-						{this.props.SongsList[4].track.name} por {this.props.SongsList[4].track.artists[0].name}
-					</p>
+					<ul className = "songs">
+						<li>
+							{this.props.SongsList[0].track.name} por {this.props.SongsList[0].track.artists[0].name}
+						</li>
+						<hr class="solid"></hr>
+						<li>
+							{this.props.SongsList[1].track.name} por {this.props.SongsList[1].track.artists[0].name}
+						</li>
+						<hr class="solid"></hr>
+						<li>
+							{this.props.SongsList[2].track.name} por {this.props.SongsList[2].track.artists[0].name}
+						</li>
+						<hr class="solid"></hr>
+						<li>
+							{this.props.SongsList[3].track.name} por {this.props.SongsList[3].track.artists[0].name}
+						</li>
+						<hr class="solid"></hr>
+						<li>
+							{this.props.SongsList[4].track.name} por {this.props.SongsList[4].track.artists[0].name}
+						</li>
+					</ul>
 				</div>
 			);
 		} else {
