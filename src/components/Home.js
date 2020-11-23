@@ -9,6 +9,7 @@ import Helmet from 'react-helmet';
 import GameArtists from './GameArtists';
 import ArtistRelated from './ArtistRelated';
 import GameArtist from './GameArtist';
+import Songs from './Songs';
 
 class Home extends React.Component {
   constructor(props) {
@@ -31,6 +32,8 @@ class Home extends React.Component {
     this.handleChange1 = this.handleChange1.bind(this);
     this.handleChange2 = this.handleChange2.bind(this);
     this.handleChange3 = this.handleChange3.bind(this);
+    this.handleChange4 = this.handleChange4.bind(this);
+    
     this.refresh = this.refresh.bind(this);
     console.log(this.state);
     // const freshState = this.state;
@@ -71,6 +74,7 @@ class Home extends React.Component {
         guessTheDate: false,
         whichArtist: false,
         guessTheArtist: false,
+        artistRelated: false,
       });
     } else {
       this.setState({ page: 'game', buttons: true });
@@ -96,6 +100,17 @@ class Home extends React.Component {
       });
     } else {
       this.setState({ page: 'log' });
+    }
+  }
+
+  handleChange4() {
+    if (this.state.page === 'songs') {
+      this.setState({
+        page: 'refresh',
+        refresh: 'songs',
+      });
+    } else {
+      this.setState({ page: 'songs' });
     }
   }
 
@@ -129,6 +144,7 @@ class Home extends React.Component {
                 <Button onClick={this.handleChange1}>Game</Button>
                 <Button onClick={this.handleChange2}>Recomendação</Button>
                 <Button onClick={this.handleChange3}>Histórico</Button>
+                <Button onClick={this.handleChange4}>Músicas</Button>
               </ButtonGroup>
               <div>
                 {this.state.buttons && (
@@ -168,6 +184,7 @@ class Home extends React.Component {
                         {' '}
                         Acerte o Artista da música!{' '}
                       </button>
+
                       <button
                         className='gameOpt'
                         onClick={() => {
@@ -180,10 +197,10 @@ class Home extends React.Component {
                         {' '}
                         Busque artistas relacionados{' '}
                       </button>
+
                     </div>
                   </div>
                 )}
-
                 {this.state.whichArtist && (
                   <GameArtists token={this.state.token} />
                 )}
@@ -196,6 +213,13 @@ class Home extends React.Component {
                     id={this.state.userId}
                     token={this.state.token}
                   />
+                )}
+
+                {this.state.artistRelated && (
+                  <ArtistRelated
+                    id={this.state.userId}
+                    token={this.state.token}
+                    />
                 )}
               </div>
             </div>
@@ -220,6 +244,8 @@ class Home extends React.Component {
                 <Button onClick={this.handleChange1}>Game</Button>
                 <Button onClick={this.handleChange2}>Recomendação</Button>
                 <Button onClick={this.handleChange3}>Histórico</Button>
+                <Button onClick={this.handleChange4}>Músicas</Button>
+                
               </ButtonGroup>
               <Recommendation token={this.state.token} />
             </div>
@@ -245,8 +271,35 @@ class Home extends React.Component {
                 <Button onClick={this.handleChange1}>Game</Button>
                 <Button onClick={this.handleChange2}>Recomendação</Button>
                 <Button onClick={this.handleChange3}>Histórico</Button>
+                <Button onClick={this.handleChange4}>Músicas</Button>
+                
               </ButtonGroup>
               <Log id={this.state.userId.id} token={this.state.token} />
+            </div>
+          </div>
+          <div className='barra3' />
+        </div>
+      );
+    } else if (this.state.page === 'songs') {
+      return (
+        <div className='gridContainer'>
+          <Helmet>
+            <title>Spotify App</title>
+          </Helmet>
+          <div className='barra1' />
+          <div className='barra2'>
+            <div className='bGroup'>
+              <ButtonGroup
+                variant='contained'
+                color='primary'
+                aria-label='contained primary button group'
+              >
+                <Button onClick={this.handleChange1}>Game</Button>
+                <Button onClick={this.handleChange2}>Recomendação</Button>
+                <Button onClick={this.handleChange3}>Histórico</Button>
+                <Button onClick={this.handleChange4}>Músicas</Button>
+              </ButtonGroup>
+              <Songs token={this.state.token} />
             </div>
           </div>
           <div className='barra3' />
