@@ -74,6 +74,7 @@ class Home extends React.Component {
         guessTheDate: false,
         whichArtist: false,
         guessTheArtist: false,
+        artistRelated: false,
       });
     } else {
       this.setState({ page: 'game', buttons: true });
@@ -186,7 +187,6 @@ class Home extends React.Component {
                     </div>
                   </div>
                 )}
-
                 {this.state.whichArtist && (
                   <GameArtists token={this.state.token} />
                 )}
