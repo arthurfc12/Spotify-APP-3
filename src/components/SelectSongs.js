@@ -1,3 +1,4 @@
+import { Button, ButtonGroup, colors } from '@material-ui/core';
 import React from 'react';
 import "./App.css";
 
@@ -57,31 +58,51 @@ class SelectSongs extends React.Component {
 			document.body.appendChild(receivesFalse);
 			return (
 				<div>
-				<ButtonGroup
-				>
-				<Button onClick={this.handleChange}>Sim</Button>
-				<Button onClick={this.handleChange2}>Não</Button>
-				</ButtonGroup>
 
 					<ul className = "songs">
 						<li>
 							{this.props.SongsList[0].track.name} por {this.props.SongsList[0].track.artists[0].name}
+							<ButtonGroup
+							>
+							<Button onClick={this.handleChange} style={{color: '#4CAF50'}}>Gosto deste artista</Button>
+							<Button onClick={this.handleChange2} style={{color: '#F50110'}}>Não gosto deste artista</Button>
+							</ButtonGroup>
 						</li>
 						<hr class="solid"></hr>
 						<li>
 							{this.props.SongsList[1].track.name} por {this.props.SongsList[1].track.artists[0].name}
+							<ButtonGroup
+							>
+							<Button onClick={this.handleChange} style={{color: '#4CAF50'}}>Gosto deste artista</Button>
+							<Button onClick={this.handleChange2} style={{color: '#F50110'}}>Não gosto deste artista</Button>
+							</ButtonGroup>
 						</li>
 						<hr class="solid"></hr>
 						<li>
 							{this.props.SongsList[2].track.name} por {this.props.SongsList[2].track.artists[0].name}
+							<ButtonGroup
+							>
+							<Button onClick={this.handleChange} style={{color: '#4CAF50'}}>Gosto deste artista</Button>
+							<Button onClick={this.handleChange2} style={{color: '#F50110'}}>Não gosto deste artista</Button>
+							</ButtonGroup>
 						</li>
 						<hr class="solid"></hr>
 						<li>
 							{this.props.SongsList[3].track.name} por {this.props.SongsList[3].track.artists[0].name}
+							<ButtonGroup
+							>
+							<Button onClick={this.handleChange} style={{color: '#4CAF50'}}>Gosto deste artista</Button>
+							<Button onClick={this.handleChange2} style={{color: '#F50110'}}>Não gosto deste artista</Button>
+							</ButtonGroup>
 						</li>
 						<hr class="solid"></hr>
 						<li>
 							{this.props.SongsList[4].track.name} por {this.props.SongsList[4].track.artists[0].name}
+							<ButtonGroup
+							>
+							<Button onClick={this.handleChange} style={{color: '#4CAF50'}}>Gosto deste artista</Button>
+							<Button onClick={this.handleChange2} style={{color: '#F50110'}}>Não gosto deste artista</Button>
+							</ButtonGroup>
 						</li>
 					</ul>
 				</div>
