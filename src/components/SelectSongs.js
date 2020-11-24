@@ -57,8 +57,11 @@ class SelectSongs extends React.Component {
 			document.body.appendChild(receivesFalse);
 			return (
 				<div>
+				<ButtonGroup
+				>
 				<Button onClick={this.handleChange}>Sim</Button>
 				<Button onClick={this.handleChange2}>Não</Button>
+				</ButtonGroup>
 
 					<ul className = "songs">
 						<li>
