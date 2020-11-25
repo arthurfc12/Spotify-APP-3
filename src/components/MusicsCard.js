@@ -90,7 +90,7 @@ class MusicsCard extends React.Component {
                     <h3>Artista: {this.props.musica.artists[0].name}</h3>
 
                     <p className="fontes">Adivinhe a Musica:</p>
-            <p className="fontes"> Lembre-se que é uma musica existente nas suas playlists! </p>
+            <p className="fontes"> Dica! A música começa com a letra: {this.props.musica.name.substring(0,1)} </p>
                     <div className="fontes">
                         <form id="contact-form" onSubmit={this.handleSubmit.bind(this)}>
                             <div>
