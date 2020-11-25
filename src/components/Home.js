@@ -7,8 +7,10 @@ import Button from '@material-ui/core/Button';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
 import Helmet from 'react-helmet';
 import GameArtists from './GameArtists';
+import ArtistRelated from './ArtistRelated';
 import GameArtist from './GameArtist';
 import Songs from './Songs';
+import GameMusic from './GameMusic.js';
 
 class Home extends React.Component {
   constructor(props) {
@@ -32,6 +34,7 @@ class Home extends React.Component {
     this.handleChange2 = this.handleChange2.bind(this);
     this.handleChange3 = this.handleChange3.bind(this);
     this.handleChange4 = this.handleChange4.bind(this);
+    
     this.refresh = this.refresh.bind(this);
     console.log(this.state);
     // const freshState = this.state;
@@ -72,6 +75,8 @@ class Home extends React.Component {
         guessTheDate: false,
         whichArtist: false,
         guessTheArtist: false,
+        guessTheMusic: false,
+        artistRelated: false,
       });
     } else {
       this.setState({ page: 'game', buttons: true });
@@ -181,6 +186,33 @@ class Home extends React.Component {
                         {' '}
                         Acerte o Artista da música!{' '}
                       </button>
+
+                      <button
+                        className='gameOpt'
+                        onClick={() => {
+                          this.setState({
+                            guessTheMusic: true,
+                            buttons: false,
+                          });
+                        }}
+                      >
+                        {' '}
+                        Acerte a Música a partir do Artista!{' '}
+                      </button>
+
+                      <button
+                        className='gameOpt'
+                        onClick={() => {
+                          this.setState({
+                            artistRelated: true,
+                            buttons: false,
+                          });
+                        }}
+                      >
+                        {' '}
+                        Busque artistas relacionados{' '}
+                      </button>
+
                     </div>
                   </div>
                 )}
@@ -188,10 +220,23 @@ class Home extends React.Component {
                 {this.state.whichArtist && (
                   <GameArtists token={this.state.token} />
                 )}
-                {this.state.guessTheDate && <Game token={this.state.token} />}
+
+                {this.state.guessTheDate && (
+                <Game token={this.state.token} />
+                )}
+
                 {this.state.guessTheArtist && (
                   <GameArtist token={this.state.token} />
                 )}
+
+                {this.state.guessTheMusic && (
+                  <GameMusic token={this.state.token} />
+                )}
+
+                {this.state.artistRelated && (
+                  <ArtistRelated id={this.state.userId} token={this.state.token}/>
+                )}
+
               </div>
             </div>
           </div>
@@ -216,6 +261,7 @@ class Home extends React.Component {
                 <Button onClick={this.handleChange2}>Recomendação</Button>
                 <Button onClick={this.handleChange3}>Histórico</Button>
                 <Button onClick={this.handleChange4}>Músicas</Button>
+                
               </ButtonGroup>
               <Recommendation token={this.state.token} />
             </div>
@@ -242,6 +288,7 @@ class Home extends React.Component {
                 <Button onClick={this.handleChange2}>Recomendação</Button>
                 <Button onClick={this.handleChange3}>Histórico</Button>
                 <Button onClick={this.handleChange4}>Músicas</Button>
+                
               </ButtonGroup>
               <Log id={this.state.userId.id} token={this.state.token} />
             </div>

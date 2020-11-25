@@ -50,7 +50,6 @@ class GameArtists extends Component {
 			console.log(this.state.popularidade1);
 			console.log(this.state.artista2);
 			console.log(this.state.popularidade2);
-
 			console.log(response.data);
 		});
 	}
@@ -119,11 +118,11 @@ class GameArtists extends Component {
 							</div>
 							<div className="desc">
 								{' '}
-								{this.state.artista2} possui uma popularidade de {this.state.popularidade2}% {' '}
+								{this.state.artista2} possui uma popularidade de {this.state.popularidade2}%{' '}
 							</div>
 							<button className="playAgain" onClick={this.handleRefresh}>
 								{' '}
-								<div> Jogar Novamente</div>
+								<div> Ver outros Jogos</div>
 							</button>
 						</div>
 					)}
