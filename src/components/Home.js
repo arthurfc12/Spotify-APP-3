@@ -10,6 +10,7 @@ import GameArtists from './GameArtists';
 import ArtistRelated from './ArtistRelated';
 import GameArtist from './GameArtist';
 import Songs from './Songs';
+import GetPlaylist from './GetPlaylist';
 
 class Home extends React.Component {
   constructor(props) {
@@ -33,6 +34,7 @@ class Home extends React.Component {
     this.handleChange2 = this.handleChange2.bind(this);
     this.handleChange3 = this.handleChange3.bind(this);
     this.handleChange4 = this.handleChange4.bind(this);
+    this.handleChange5 = this.handleChange5.bind(this);
     
     this.refresh = this.refresh.bind(this);
     console.log(this.state);
@@ -49,7 +51,12 @@ class Home extends React.Component {
     console.log(this.props);
     fetch('https://api.spotify.com/v1/me', requestOptions)
       .then((response) => response.json())
-      .then((data) => this.setState({ userId: data }));
+      .then((data) => {
+        console.log(data.id);
+        localStorage.setItem("UserID",data.id)
+        console.log(localStorage.getItem("UserID"))
+        this.setState({ userId: data })
+      });
   }
 
   getHashParams() {
@@ -114,6 +121,17 @@ class Home extends React.Component {
     }
   }
 
+  handleChange5() {
+    if (this.state.page === 'getplaylist') {
+      this.setState({
+        page: 'refresh',
+        refresh: 'getplaylist',
+      });
+    } else {
+      this.setState({ page: 'getplaylist' });
+    }
+  }
+
   handleClose() {
     this.setState({ drop: false });
   }
@@ -145,6 +163,7 @@ class Home extends React.Component {
                 <Button onClick={this.handleChange2}>Recomendação</Button>
                 <Button onClick={this.handleChange3}>Histórico</Button>
                 <Button onClick={this.handleChange4}>Músicas</Button>
+                <Button onClick={this.handleChange5}>Playlists</Button>
               </ButtonGroup>
               <div>
                 {this.state.buttons && (
@@ -245,6 +264,9 @@ class Home extends React.Component {
                 <Button onClick={this.handleChange2}>Recomendação</Button>
                 <Button onClick={this.handleChange3}>Histórico</Button>
                 <Button onClick={this.handleChange4}>Músicas</Button>
+                <Button onClick={this.handleChange5}>Playlists</Button>
+
+
                 
               </ButtonGroup>
               <Recommendation token={this.state.token} />
@@ -272,6 +294,8 @@ class Home extends React.Component {
                 <Button onClick={this.handleChange2}>Recomendação</Button>
                 <Button onClick={this.handleChange3}>Histórico</Button>
                 <Button onClick={this.handleChange4}>Músicas</Button>
+                <Button onClick={this.handleChange5}>Playlists</Button>
+
                 
               </ButtonGroup>
               <Log id={this.state.userId.id} token={this.state.token} />
@@ -298,6 +322,8 @@ class Home extends React.Component {
                 <Button onClick={this.handleChange2}>Recomendação</Button>
                 <Button onClick={this.handleChange3}>Histórico</Button>
                 <Button onClick={this.handleChange4}>Músicas</Button>
+                <Button onClick={this.handleChange5}>Playlists</Button>
+
               </ButtonGroup>
               <Songs token={this.state.token} />
             </div>
@@ -305,7 +331,35 @@ class Home extends React.Component {
           <div className='barra3' />
         </div>
       );
-    } else {
+    }else if (this.state.page === 'getplaylist'){
+      return (
+        <div className='gridContainer'>
+          <Helmet>
+            <title>Spotify App</title>
+          </Helmet>
+          <div className='barra1' />
+          <div className='barra2'>
+            <div className='bGroup'>
+              <ButtonGroup
+                variant='contained'
+                color='primary'
+                aria-label='contained primary button group'
+              >
+                <Button onClick={this.handleChange1}>Game</Button>
+                <Button onClick={this.handleChange2}>Recomendação</Button>
+                <Button onClick={this.handleChange3}>Histórico</Button>
+                <Button onClick={this.handleChange4}>Músicas</Button>
+                <Button onClick={this.handleChange5}>Playlists</Button>
+
+              </ButtonGroup>
+              <GetPlaylist token={this.state.token} />
+            </div>
+          </div>
+          <div className='barra3' />
+        </div>
+      );
+    }
+     else {
       console.log(this.state.page);
       this.refresh();
       return <div className='screen'>Carregando</div>;
