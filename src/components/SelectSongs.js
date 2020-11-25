@@ -60,19 +60,6 @@ class SelectSongs extends React.Component {
 		if (this.props.SongsList !== '') {
 			console.log('this.state.SongsList.items: ENTROUUU', this.state.SongsList.items);
 
-
-
-			var receivesTrue = document.createElement('button');
-			receivesTrue.id = true;
-			receivesTrue.innerHTML = 'Click me';
-			receivesTrue.style.background = '#4FFF8F';
-			document.body.appendChild(receivesTrue);
-
-			var receivesFalse = document.createElement('button');
-			receivesFalse.id = false;
-			receivesFalse.innerHTML = 'Click me';
-			receivesFalse.style.background = '#4FFF8F';
-			document.body.appendChild(receivesFalse);
 			return (
 				<div>
 
