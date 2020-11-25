@@ -2,6 +2,8 @@ import { Button, ButtonGroup, colors } from '@material-ui/core';
 import React from 'react';
 import "./App.css";
 
+const express = require('express')
+
 class SelectSongs extends React.Component {
 	constructor(props) {
 		super(props);
@@ -14,6 +16,21 @@ class SelectSongs extends React.Component {
 
 	handleChange() {
 		alert("Artista definido como 'gostei'" )
+		router.post('/likes/', function(req, res, next) {
+			var db = require("../db.js");
+			var likes = db.Mongoose.model('usercollection', db.userSchema, 'usercollection');
+			var newlike = ({name: req.body.name});
+			console.log(newlike);
+			newlike.save(function (err){
+				if (err) {
+					res.status(500).json({ error: err.message });
+					res.end();
+					return;
+				}
+				res.json(newlike);
+				res.end();
+			});
+		});
 	}
 
 	handleChange2() {
