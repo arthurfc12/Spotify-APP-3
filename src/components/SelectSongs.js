@@ -16,21 +16,21 @@ class SelectSongs extends React.Component {
 
 	handleChange() {
 		alert("Artista definido como 'gostei'" )
-		router.post('/likes/', function(req, res, next) {
-			var db = require("../db.js");
-			var likes = db.Mongoose.model('usercollection', db.userSchema, 'usercollection');
-			var newlike = ({name: req.body.name});
-			console.log(newlike);
-			newlike.save(function (err){
-				if (err) {
-					res.status(500).json({ error: err.message });
-					res.end();
-					return;
-				}
-				res.json(newlike);
-				res.end();
-			});
-		});
+	//	router.post('/likes/', function(req, res, next) {
+	//		var db = require("../views/db.js");
+	//		var likes = db.Mongoose.model('usercollection', db.userSchema, 'usercollection');
+	//		var newlike = ({name: req.body.name});
+	//		console.log(newlike);
+	//		newlike.save(function (err){
+	//			if (err) {
+	//				res.status(500).json({ error: err.message });
+	//				res.end();
+	//				return;
+	//			}
+	//			res.json(newlike);
+	//			res.end();
+	//		});
+	//	});
 	}
 
 	handleChange2() {
