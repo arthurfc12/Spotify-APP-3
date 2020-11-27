@@ -10,6 +10,8 @@ import GameArtists from './GameArtists';
 import ArtistRelated from './ArtistRelated';
 import GameArtist from './GameArtist';
 import Songs from './Songs';
+import GameMusic from './GameMusic.js';
+import AlbumGame from './AlbumGame';
 import GetPlaylist from './GetPlaylist';
 
 class Home extends React.Component {
@@ -81,7 +83,9 @@ class Home extends React.Component {
         guessTheDate: false,
         whichArtist: false,
         guessTheArtist: false,
+        guessTheMusic: false,
         artistRelated: false,
+        guessTheAlbum: false,
       });
     } else {
       this.setState({ page: 'game', buttons: true });
@@ -208,6 +212,19 @@ class Home extends React.Component {
                         className='gameOpt'
                         onClick={() => {
                           this.setState({
+                            guessTheMusic: true,
+                            buttons: false,
+                          });
+                        }}
+                      >
+                        {' '}
+                        Acerte a Música a partir do Artista!{' '}
+                      </button>
+
+                      <button
+                        className='gameOpt'
+                        onClick={() => {
+                          this.setState({
                             artistRelated: true,
                             buttons: false,
                           });
@@ -217,29 +234,47 @@ class Home extends React.Component {
                         Busque artistas relacionados{' '}
                       </button>
 
+                      <button
+                        className='gameOpt'
+                        onClick={() => {
+                          this.setState({
+                            guessTheAlbum: true,
+                            buttons: false,
+                          });
+                        }}
+                      >
+                        {' '}
+                        Acerte o Album a partir da Música!{' '}
+                      </button>
+
                     </div>
                   </div>
                 )}
+
                 {this.state.whichArtist && (
                   <GameArtists token={this.state.token} />
                 )}
-                {this.state.guessTheDate && <Game token={this.state.token} />}
+
+                {this.state.guessTheDate && (
+                <Game token={this.state.token} />
+                )}
+
                 {this.state.guessTheArtist && (
                   <GameArtist token={this.state.token} />
                 )}
-                {this.state.artistRelated && (
-                  <ArtistRelated
-                    id={this.state.userId}
-                    token={this.state.token}
-                  />
+
+                {this.state.guessTheMusic && (
+                  <GameMusic token={this.state.token} />
                 )}
 
                 {this.state.artistRelated && (
-                  <ArtistRelated
-                    id={this.state.userId}
-                    token={this.state.token}
-                    />
+                  <ArtistRelated id={this.state.userId} token={this.state.token}/>
                 )}
+
+                {this.state.guessTheAlbum && (
+                  <AlbumGame token={this.state.token} />
+                )}
+
               </div>
             </div>
           </div>

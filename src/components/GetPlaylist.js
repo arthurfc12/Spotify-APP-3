@@ -28,7 +28,6 @@ class GetPlaylist extends React.Component{
             .then((response) => response.json())
             .then((data) =>{
 
-                console.log(user)
                 console.log(this.state.userID)
                 console.log(data)
             })
@@ -41,7 +40,8 @@ class GetPlaylist extends React.Component{
     }
 
     render(){
-        return(<h1>hello world</h1>)
+        return(<h1 className="titulos">Playlists</h1>)
+        
     }
 
 

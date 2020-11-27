@@ -43,7 +43,6 @@ export default function ArtistRelated(props) {
       <p style={{ textAlign: 'center', fontSize: '1.3rem' }}>
         Selecione um artista para ver os artistas relacionados:
       </p>
-
       {topArtists.items !== undefined &&
         Object.values(topArtists.items)?.map((item, key) => {
           return (
