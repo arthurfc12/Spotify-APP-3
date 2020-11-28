@@ -24,11 +24,9 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-
     "start": "node --max_old_space_size=2560 node_modules/.bin/react-scripts start",
     "build": "node --max_old_space_size=2560 node_modules/.bin/react-scripts build",
     "test": "react-scripts test --env=jest-environment-jsdom-sixteen",
-
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
