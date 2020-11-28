@@ -35,8 +35,9 @@ A aplicação contém:
     -Jogo qual artista mais famoso
     -Jogo acerte o artista
     -Jogo acerte a musica
+    -Jogo acerte o album
     -Historico de Musicas
-    -Botao gosta ou nao gosta da musica
+    -Botao gosta ou nao gosta da musica + database
     -Artistas relacionados
     -Adicionar uma musica recomendada a uma playlist
 

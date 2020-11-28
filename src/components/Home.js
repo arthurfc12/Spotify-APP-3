@@ -11,6 +11,7 @@ import ArtistRelated from './ArtistRelated';
 import GameArtist from './GameArtist';
 import Songs from './Songs';
 import GameMusic from './GameMusic.js';
+import AlbumGame from './AlbumGame';
 
 class Home extends React.Component {
   constructor(props) {
@@ -77,6 +78,7 @@ class Home extends React.Component {
         guessTheArtist: false,
         guessTheMusic: false,
         artistRelated: false,
+        guessTheAlbum: false,
       });
     } else {
       this.setState({ page: 'game', buttons: true });
@@ -213,6 +215,19 @@ class Home extends React.Component {
                         Busque artistas relacionados{' '}
                       </button>
 
+                      <button
+                        className='gameOpt'
+                        onClick={() => {
+                          this.setState({
+                            guessTheAlbum: true,
+                            buttons: false,
+                          });
+                        }}
+                      >
+                        {' '}
+                        Acerte o Album a partir da Música!{' '}
+                      </button>
+
                     </div>
                   </div>
                 )}
@@ -235,6 +250,10 @@ class Home extends React.Component {
 
                 {this.state.artistRelated && (
                   <ArtistRelated id={this.state.userId} token={this.state.token}/>
+                )}
+
+                {this.state.guessTheAlbum && (
+                  <AlbumGame token={this.state.token} />
                 )}
 
               </div>
