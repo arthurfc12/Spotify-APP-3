@@ -94,7 +94,7 @@ class GameArtists extends Component {
 					<h3 className="title"> Qual artista é mais famoso? </h3>
 				</div>
 				<div className="inRow">
-					<button className="btn" ref="btn1" onClick={this.handleFirstArtist}>
+					<button className="btn" data-testid="click-field" ref="btn1" onClick={this.handleFirstArtist}>
 						{' '}
 						{this.state.artista1}
 					</button>
