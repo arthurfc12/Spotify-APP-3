@@ -41,8 +41,6 @@ class ArtistCard extends React.Component {
 
     handleSubmit( event ) {
         event.preventDefault();
-        // this.state.submission = true
-        // console.log(this.state);
         let c1;
         let r1;
         c1 = this.state.artista
@@ -57,30 +55,8 @@ class ArtistCard extends React.Component {
         } else {
             this.state.a1 = "Errou!"
         }
-
-        // console.log(this.state);
         this.forceUpdate()
       }
-
-    // sendLog() {
-    //     var myHeaders = new Headers();
-
-    //     myHeaders.append("Content-Type", "application/json");
-    //     var raw = JSON.stringify({"id":this.state.userId.id,"musica":this.props.musica.name+" por "+this.props.musica.artists[0].name,"correct":this.state.correctDate,"guess":this.state.date});
-    //     // console.log(raw)
-    //     var requestOptions = {
-    //         method: 'POST',
-    //         headers: myHeaders,
-    //         body: raw
-    //     };
-        
-    //     fetch("http://localhost:5000/save", requestOptions) //http://localhost:5000/save to run locally
-    //         .then(response => response.text())
-    //         .then(result => console.log(result))
-    //         .catch(error => console.log('error', error));
-
-    //     this.setState({submitted:true})
-    // }
 
     render(){
         if(this.state.submission===false){

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should appear the name of the correct artist 1`] = `
+exports[`should appear the name of the correct Music 1`] = `
 <h1
   className="titulos"
 >
