@@ -76,14 +76,18 @@ class GetPlaylist extends React.Component {
 
   render() {
     return (
-      <div>
+      <div >
         <h1 className="titulos">Playlists</h1>
         <ul>
           {this.state.playlists.map((music) => {
             return (
               <li>
-                <p className="titulos">{music.name}</p>
-                <img src={music.images[0].url}></img>
+                <p className="titulos" style={{
+                  fontSize:'25px'
+                }}>{music.name}</p>
+                <img src={music.images[0].url} style={{
+                  height:'10rem'
+                }}></img>
               </li>
               //console.log('name',music.name)
               //console.log('image',music.images[0].url)
