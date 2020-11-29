@@ -63,7 +63,7 @@ class MyPlaylist extends Component {
 				{this.state.playlists !== '' ? (
 					playlists.map((playlist, idx) => {
 						return (
-							<div>
+							<div key={idx}>
 								<button
 									onClick={() => {
 										post(playlist.id);
