@@ -40,5 +40,6 @@ A aplicação contém:
     -Botao gosta ou nao gosta da musica + database
     -Artistas relacionados
     -Adicionar uma musica recomendada a uma playlist
+    -Aba de visualização de playlists
 
 As músicas dos jogos e os valores iniciais para as recomendações são baseadas nas playlists e músicas do usuário.
