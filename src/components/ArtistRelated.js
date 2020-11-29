@@ -30,8 +30,11 @@ export default function ArtistRelated(props) {
         requestOptions
       )
       .then((response) => {
-        console.log('related-artists:', response.data.artists);
-        setArtistRelatedList(response.data.artists);
+        console.log(
+          'related-artists:',
+          JSON.stringify(response.data.artists.slice(0, 2))
+        );
+        setArtistRelatedList(response.data.artists.slice(0, 2));
       });
   }
 
