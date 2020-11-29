@@ -10,10 +10,10 @@ configure({ adapter: new Adapter() });
 
 afterEach(cleanup);
 
-it('should render the playlists names on the buttons', async () => {
+it('should show artist related', async () => {
   const data = {
-    id: '7185Q95lPFld0aoPqO6e0U',
-    artistRelated: [
+    artistSelected: '7185Q95lPFld0aoPqO6e0U',
+    ArtistRelatedList: [
       {
         external_urls: {
           spotify: 'https://open.spotify.com/artist/50nVKm0xa3p8KYXXssG2ym',
@@ -85,5 +85,12 @@ it('should render the playlists names on the buttons', async () => {
 
   mockedAxios.get.mockResolvedValueOnce(data);
   const app = shallow(<ArtistRelated />);
+
+  // expect(mockedAxios.get).toHaveBeenCalledTimes(1);
+
+  // expect(['7185Q95lPFld0aoPqO6e0U']).toContain(app.find('id').at(0).text());
+  // await waitFor(() => {
+  // });
+
   expect(toJson(app)).toMatchSnapshot();
 });
