@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, wait, cleanup, waitFor, getAllByDisplayValue, getByDisplayValue, getAllByTitle } from '@testing-library/react';
+import { render, wait, cleanup, waitFor, getAllByDisplayValue, getByDisplayValue, getAllByTitle, getAllByTestId } from '@testing-library/react';
 import mockedAxios from 'axios';
 import SelectSongs from '../components/SelectSongs';
 import toJson from 'enzyme-to-json';
@@ -53,14 +53,16 @@ it('should render alert screen box', async () => {
         expect(mockedAxios.post).toHaveBeenCalledTimes(1);
     })
 
-    const artistInDb = getAllByTitle(/Artista definido como 'gostei'/i);
-    expect(artistInDb).toBeInTheDocument();
+    //const artistInDb = getAllByTestId(/Artista_definido_como_'gostei'/i);
+    global.alert = jest.fn();
+    const artistInDb = jest.spyOn(window, 'alert');
+    expect(global.alert).toHaveBeenCalled();
 
     const dislikeButton = getAllByText(/Não gosto deste artista/i);
     expect(dislikeButton[0]).toBeInTheDocument();
     dislikeButton[0].click();
 
-    const artistNotInDb = getAllByText(/Artista definido como 'não gostei'/i);
+    const artistNotInDb = getAllByText(/Artista_definido_como_'não gostei'/i);
     expect(artistNotInDb).toBeInTheDocument();
     
 });
