@@ -4,7 +4,7 @@
 
 Original: https://spotifyapifrontend.herokuapp.com/
 
-Fork: ...
+Fork: https://tecweb-spotfy.herokuapp.com/
 
 ## Notas
 
@@ -17,7 +17,7 @@ Ao entrar no site, ele pode demorar um pouco para carregar, pois o heroku, quand
 Esta aplicação utiliza duas APIs:
 
     -Spotify-API:         https://github.com/luizfelipelazzaron/Spotify-API
-    -Spotify-APP-backend: https://github.com/lucaskf1996/Spotify-APP-backend
+    -Spotify-APP-backend: https://github.com/beatrizbernardino/Spotify-APP-backend
 
 A primeira é a API própria do Spotify, enquanto a segunda é uma API produzida para guardar informações relacionadas ao jogo contido nesta aplicação.
 
@@ -40,5 +40,6 @@ A aplicação contém:
     -Botao gosta ou nao gosta da musica + database
     -Artistas relacionados
     -Adicionar uma musica recomendada a uma playlist
+    -Aba de visualização de playlists
 
 As músicas dos jogos e os valores iniciais para as recomendações são baseadas nas playlists e músicas do usuário.

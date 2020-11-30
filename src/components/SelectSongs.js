@@ -2,6 +2,7 @@ import { Button, ButtonGroup, colors } from '@material-ui/core';
 import React from 'react';
 import "./App.css";
 import axios from 'axios';
+import PropTypes from "prop-types";
 
 //const express = require('express')
 
@@ -12,8 +13,14 @@ class SelectSongs extends React.Component {
 		// console.log(props)
 		this.state = {
 			SongsList: ''
-		};
+		};		
 	}
+
+	static propTypes = {
+		SongsList: PropTypes.array
+	}
+
+	
 
 	handleChange(index) {
 		alert("Artista definido como 'gostei'" )
@@ -50,6 +57,7 @@ class SelectSongs extends React.Component {
 	}
 
 	render() {
+		const { SongsList } = this.props
 		console.log('this.state.SongsList:', this.state.SongsList);
 		console.log('this.props.SongsList: ALOOOOOOOOO', this.props.SongsList[0].track.name);
 		this.state.variable = true
@@ -114,4 +122,5 @@ class SelectSongs extends React.Component {
 		}
 	}
 }
+
 export default SelectSongs;
