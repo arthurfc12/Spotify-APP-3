@@ -9,7 +9,7 @@ export default (props) => (
 			exact
 			path="/"
 			component={() => {
-				window.location.href = 'http://localhost:8888/'; // http://localhost:8888
+				window.location.href = 'https://tecweb-spotfy.herokuapp.com/'; // http://localhost:8888
 				return null;
 			}}
 		/>
