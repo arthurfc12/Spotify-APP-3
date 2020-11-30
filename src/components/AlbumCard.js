@@ -83,7 +83,9 @@ class AlbumCard extends React.Component {
 
   render() {
     if (this.state.submission === false) {
-      console.log(this.props.musica.album.name);
+      //console.log(this.props.musica.album.name);
+      console.log("Lista:")
+      console.log(this.props);
       return (
         <div className='titulos'>
           <h3>Musica: {this.props.musica.name}</h3>
